@@ -43,8 +43,9 @@ function clean_container() {
 
 for container in $(pct list | awk '{if(NR>1) print $1}'); do
   os=$(pct config "$container" | awk '/^ostype/ {print $2}')
+  contname=$(pct exec "$container" hostname)
   while true; do
-    read -p "Do you want to clean $container (y/n)?" yn
+    read -p "Do you want to clean $contname ($container) (y/n)?" yn
     case $yn in
     [Yy]*) break ;;
     [Nn]*) continue 2 ;;
