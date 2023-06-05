@@ -47,7 +47,7 @@ for container in $(pct list | awk '{if(NR>1) print $1}'); do
     read -p "Do you want to clean $container (y/n)?" yn
     case $yn in
     [Yy]*) break 2 ;;
-    [Nn]*) break 1 ;;
+    [Nn]*) break  ;;
     *) echo "Please answer yes or no." ;;
     esac
   done
