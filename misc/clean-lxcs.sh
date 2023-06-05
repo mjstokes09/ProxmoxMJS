@@ -43,12 +43,14 @@ function clean_container() {
 
 for container in $(pct list | awk '{if(NR>1) print $1}'); do
   os=$(pct config "$container" | awk '/^ostype/ {print $2}')
-  read -p "Do you want to clean $container (y/n)" yn
+while true; do
+  read -p "Do you want to clean $container (y/n)?" yn
   case $yn in
-  [Yy]*)  break;;
-  [Nn]*)  ;;
+  [Yy]*) break ;;
+  [Nn]*) break 2 ;;
   *) echo "Please answer yes or no." ;;
   esac
+done
   
   if [ "$os" != "debian" ] && [ "$os" != "ubuntu" ]; then
     header_info
