@@ -4,6 +4,22 @@
 
 - All LXC instances created using this repository come pre-installed with Midnight Commander, which is a command-line tool (`mc`) that offers a user-friendly file and directory management interface for the terminal environment.
 
+## 2023-06-12
+
+### Changed
+
+- **Proxmox VE Edge Kernel**
+  - Removed, with the Proxmox opt-in kernels and the upcoming Proxmox Virtual Environment 8, edge kernels are no longer needed.
+- **Proxmox VE Kernel Clean**
+  - Now compatible with PVE8.
+
+## 2023-06-11
+
+### Changed
+
+- **Proxmox VE Post Install**
+  - Now compatible with both Proxmox Virtual Environment 7 (PVE7) and Proxmox Virtual Environment 8 (PVE8). 
+
 ## 2023-06-02
 
 ### Changed

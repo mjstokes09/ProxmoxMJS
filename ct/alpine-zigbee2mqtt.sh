@@ -24,13 +24,13 @@ var_disk="0.3"
 var_cpu="1"
 var_ram="256"
 var_os="alpine"
-var_version="3.17"
+var_version="3.18"
 variables
 color
 catch_errors
 
 function default_settings() {
-  CT_TYPE="1"
+  CT_TYPE="0"
   PW=""
   CT_ID=$NEXTID
   HN=$NSAPP
