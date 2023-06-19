@@ -46,12 +46,17 @@ while true; do
     else
       # It is a virtual machine
       config_cmd="qm config"
-      IP=$(qm guest cmd $instance network-get-interfaces | egrep -o "([0-9]{1,3}\.){3}[0-9]{1,3}" | grep -E "192\.|10\.")
+      IP=$(qm guest cmd $instance network-get-interfaces | egrep -o "([0-9]{1,3}\.){3}[0-9]{1,3}" | grep -E "192\.|10\." | head -n 1)
     fi
 
-    # Skip instances based on templates
+    # Skip instances based on onboot and templates
+    onboot=$($config_cmd $instance | grep onboot | grep -q "onboot: 0" && echo "true" || echo "false")
     template=$($config_cmd $instance | grep template | grep -q "template:" && echo "true" || echo "false")
-    if [ "$template" == "true" ]; then
+
+    if [ "$onboot" == "true" ]; then
+      echo "Skipping $instance because it is set not to boot"
+      continue
+    elif [ "$template" == "true" ]; then
       echo "Skipping $instance because it is a template"
       continue
     fi

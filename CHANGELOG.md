@@ -4,6 +4,28 @@
 
 - All LXC instances created using this repository come pre-installed with Midnight Commander, which is a command-line tool (`mc`) that offers a user-friendly file and directory management interface for the terminal environment.
 
+## 2023-06-18
+
+### Changed
+
+- **OpenObserve LXC**
+  - NEW Script
+
+## 2023-06-17
+
+### Changed
+
+- **UniFi Network Application LXC**
+  - Now distribution agnostic.
+- **Omada Controller LXC**
+  - Now distribution agnostic.
+## 2023-06-16
+
+### Changed
+
+- **Proxmox VE Monitor-All**
+  - Skip instances based on onboot and templates. [8c2a3cc](https://github.com/tteck/Proxmox/commit/8c2a3cc4d774fa13d17f695d6bdf9a4deedb1372). 
+
 ## 2023-06-12
 
 ### Changed
@@ -32,7 +54,7 @@
 ### Changed
 
 - **Proxmox VE 7 Post Install**
-  - If an Intel N-series processor is detected, the script provides options to install both the Proxmox 6.2 kernel and the Intel microcode.
+  - If an Intel N-series processor is detected, ~the script provides options to install both the Proxmox 6.2 kernel and the Intel microcode.~ and using PVE7, recommend using PVE8
 
 ## 2023-05-23
 
